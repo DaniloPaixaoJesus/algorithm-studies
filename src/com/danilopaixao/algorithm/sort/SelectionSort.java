@@ -10,7 +10,7 @@ import com.danilopaixao.algorithm.Product;
  * and it has performance advantages over more complicated algorithms in certain situations, 
  * particularly where auxiliary memory is limited.
  * 
- * Time complexity: quadratic O(n^2)
+ * Time complexity: quadratic O(n\log n)
  * 
  * @author user
  *
