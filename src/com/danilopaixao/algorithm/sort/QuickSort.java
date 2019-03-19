@@ -1,6 +1,6 @@
 package com.danilopaixao.algorithm.sort;
 
-import com.danilopaixao.algorithm.Nota;
+import com.danilopaixao.algorithm.Note;
 
 /**
  * 
@@ -13,42 +13,42 @@ public class QuickSort {
 	
 	public static void main(String[] args) {
 		
-		Nota[] notas = { new Nota("andre", 4), new Nota("mariana", 5), new Nota("carlos", 8.5), new Nota("paulo", 9),
-				new Nota("jonas", 3), new Nota("juliana", 6.7), new Nota("guilherme", 7), new Nota("lucia", 9.3),
-				new Nota("ana", 10) };
-		sort(notas, 0, notas.length);
-		for (Nota nota : notas) {
-			System.out.println(nota.getAluno() + " " + nota.getValor());
+		Note[] notes = { new Note("andre", 4), new Note("mariana", 5), new Note("carlos", 8.5), new Note("paulo", 9),
+				new Note("jonas", 3), new Note("juliana", 6.7), new Note("guilherme", 7), new Note("lucia", 9.3),
+				new Note("ana", 10) };
+		sort(notes, 0, notes.length);
+		for (Note note : notes) {
+			System.out.println(note.getAluno() + " " + note.getValor());
 		}
 		
 	}
 	
-	private static void sort(Nota[] notas, int de, int ate) {
-		int elementos = ate - de;
-		if(elementos > 1) {
-			int posicaoPivo = particiona(notas, de, ate);
-			sort(notas, de, posicaoPivo);
-			sort(notas, posicaoPivo + 1, ate);
+	private static void sort(Note[] notes, int beginAt, int endAt) {
+		int elements = endAt - beginAt;
+		if(elements > 1) {
+			int pivot = partition(notes, beginAt, endAt);
+			sort(notes, beginAt, pivot);
+			sort(notes, pivot + 1, endAt);
 		}
 	}
 
-	private static int particiona(Nota[] notas, int inicial, int termino) {
+	private static int partition(Note[] notas, int inicial, int termino) {
 		int menoresEncontrados = 0;
-		Nota pivo = notas[termino-1];
+		Note pivo = notas[termino-1];
 		for (int analisando = 0; analisando < termino -1; analisando++) {
-			Nota atual = notas[analisando];
+			Note atual = notas[analisando];
 			if(atual.getValor() <= pivo.getValor()) {
-				troca(notas, analisando, menoresEncontrados);
+				swapping(notas, analisando, menoresEncontrados);
 				menoresEncontrados++;
 			}
 		}
-		troca(notas, termino-1, menoresEncontrados);
+		swapping(notas, termino-1, menoresEncontrados);
 		return menoresEncontrados;
 	}
 
-	public static void troca(Nota[] notas, int de, int para) {
-		Nota nota1 = notas[de];
-		Nota nota2 = notas[para];
+	public static void swapping(Note[] notas, int de, int para) {
+		Note nota1 = notas[de];
+		Note nota2 = notas[para];
 		notas[para] = nota1;
 		notas[de] = nota2;
 	}

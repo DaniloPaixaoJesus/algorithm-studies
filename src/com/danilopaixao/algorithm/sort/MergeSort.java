@@ -1,6 +1,6 @@
 package com.danilopaixao.algorithm.sort;
 
-import com.danilopaixao.algorithm.Nota;
+import com.danilopaixao.algorithm.Note;
 
 /**
  * Merge Sort is a Divide and Conquer algorithm. 
@@ -18,88 +18,58 @@ public class MergeSort {
 
 	public static void main(String[] args) {
 
-		Nota[] notas = { new Nota("andre", 4), new Nota("mariana", 5), new Nota("carlos", 8.5), new Nota("paulo", 9),
-				new Nota("jonas", 3), new Nota("juliana", 6.7), new Nota("guilherme", 7), new Nota("lucia", 9.3),
-				new Nota("ana", 10) };
+		Note[] notes = { new Note("andre", 4), new Note("mariana", 5), new Note("carlos", 8.5), new Note("paulo", 9),
+				new Note("jonas", 3), new Note("juliana", 6.7), new Note("guilherme", 7), new Note("lucia", 9.3),
+				new Note("ana", 10) };
 
-		sort(notas, 0, notas.length);
-		for (Nota nota : notas) {
+		sort(notes, 0, notes.length);
+		for (Note nota : notes) {
 			System.out.println(nota.getAluno() + " " + nota.getValor());
 		}
 
 	}
 	
-	private static void sort(Nota[] notas, int inicio, int termino) {
-		int quantidade = termino - inicio;
-		if(quantidade > 1) {
-			int meio = (inicio + termino)/2;
-			sort(notas, inicio, meio);
-			sort(notas, meio, termino);
-			merge(notas, inicio, meio, termino);
+	private static void sort(Note[] notes, int beginAt, int endAt) {
+		int quantity = endAt - beginAt;
+		if(quantity > 1) {
+			int middle = (beginAt + endAt)/2;
+			sort(notes, beginAt, middle);
+			sort(notes, middle, endAt);
+			merge(notes, beginAt, middle, endAt);
 		}
 	}
 
-	private static void merge(Nota[] notas, int inicio, int posCorte, int termino) {
-		Nota[] resultado = new Nota[termino - inicio];
-		int atual1 = inicio;
-		int atual2 = posCorte;
-		int atual = 0;
-		while (atual1 < posCorte && atual2 < termino) {
-			Nota nota1 = notas[atual1];
-			Nota nota2 = notas[atual2];
-			if (nota1.getValor() < nota2.getValor()) {
-				resultado[atual] = nota1;
-				atual1++;
+	private static void merge(Note[] notes, int beginAt, int cutPosition, int endAt) {
+		Note[] result = new Note[endAt - beginAt];
+		int current1 = beginAt;
+		int current2 = cutPosition;
+		int i = 0;
+		while (current1 < cutPosition && current2 < endAt) {
+			Note note1 = notes[current1];
+			Note note2 = notes[current2];
+			if (note1.getValor() < note2.getValor()) {
+				result[i] = note1;
+				current1++;
 			} else {
-				resultado[atual] = nota2;
-				atual2++;
+				result[i] = note2;
+				current2++;
 			}
-			atual++;
+			i++;
 		}
-		while (atual1 < posCorte) {
-			resultado[atual] = notas[atual1];
-			atual1++;
-			atual++;
+		while (current1 < cutPosition) {
+			result[i] = notes[current1];
+			current1++;
+			i++;
 		}
 
-		while (atual2 < termino) {
-			resultado[atual] = notas[atual2];
-			atual2++;
-			atual++;
+		while (current2 < endAt) {
+			result[i] = notes[current2];
+			current2++;
+			i++;
 		}
-		for (int cont = 0; cont < atual; cont++) {
-			notas[inicio + cont] = resultado[cont];
+		for (int cont = 0; cont < i; cont++) {
+			notes[beginAt + cont] = result[cont];
 		}
 	}
 
-	private static Nota[] merge(Nota[] notas1, Nota[] notas2) {
-		int total = notas1.length + notas2.length;
-		Nota[] resultado = new Nota[total];
-		int atual1 = 0;
-		int atual2 = 0;
-		int atual = 0;
-		while (atual1 < notas1.length && atual2 < notas2.length) {
-			Nota nota1 = notas1[atual1];
-			Nota nota2 = notas2[atual2];
-			if (nota1.getValor() < nota2.getValor()) {
-				resultado[atual] = nota1;
-				atual1++;
-			} else {
-				resultado[atual] = nota2;
-				atual2++;
-			}
-			atual++;
-		}
-		while (atual1 < notas1.length) {
-			resultado[atual] = notas1[atual1];
-			atual1++;
-			atual++;
-		}
-		while (atual2 < notas2.length) {
-			resultado[atual] = notas2[atual2];
-			atual2++;
-			atual++;
-		}
-		return resultado;
-	}
 }

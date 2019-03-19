@@ -1,11 +1,11 @@
 package com.danilopaixao.algorithm;
 
-public class Nota {
+public class Note {
 	
 	private String aluno;
 	private double valor;
 	
-	public Nota(String aluno, double valor) {
+	public Note(String aluno, double valor) {
 		this.setAluno(aluno);
 		this.setValor(valor);
 	}
