@@ -9,7 +9,7 @@ import com.danilopaixao.algorithm.Nota;
  * The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted 
  * and merges the two sorted sub-arrays into one.
  * 
- * Time complexity: Logarithmic O(n^2)
+ * Time complexity: Logarithmic O(NlogN)
  * 
  * @author user
  *
