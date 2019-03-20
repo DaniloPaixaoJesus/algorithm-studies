@@ -12,6 +12,8 @@ import com.danilopaixao.algorithm.Note;
  * Mathematical analysis of quicksort shows that, on average, the algorithm takes O(n log n) comparisons to sort n items. 
  * In the worst case, it makes O(n2) comparisons, though this behavior is rare. 
  * 
+ * Quick sort is better then Merge Sort
+ * 
  * Time complexity: Logarithmic O(NlogN)
  * 
  * @author user
