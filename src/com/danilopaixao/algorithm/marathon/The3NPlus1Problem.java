@@ -46,7 +46,7 @@ public class The3NPlus1Problem {
 	}
 	
 	public static int exec3NPlus1Recursive(int n) {
-		//System.out.println(n);
+		System.out.println(n);
 		if (n == 1) {
 			return n;
 		} else if (n % 2 != 0) {
@@ -60,12 +60,27 @@ public class The3NPlus1Problem {
 	public static void main(String[] args) {
 		int i = 1;
 		int j = 999999;
-		System.out.println("inicio");
-		int max = 0;
-		for(int cont = i; cont <= j; cont++) {
-			max = Math.max(max, cycleLength(cont));	
+		
+//		exec3NPlus1Recursive(18);
+
+		if (i > j) {
+			int temporario = j;
+			j = i;
+			i = temporario;
 		}
-		System.out.println("fim "+ max);
+		
+		int maxCycle = 0;
+		int valueMaxCycle = 0;
+		for(int cont = i; cont <= j; cont++) {
+			int tmpMax = cycleLength(cont);
+			if (tmpMax > maxCycle) {
+				maxCycle = tmpMax;
+				valueMaxCycle = cont;
+			}
+		}
+		System.out.println("valor do maior ciclo (" + j + "): "+ valueMaxCycle);
+		System.out.println("quantidade de ciclo para (" + j + "): "+ maxCycle);
+		
 		
 	}
 	
@@ -83,10 +98,28 @@ public class The3NPlus1Problem {
 	}
 	
 	public static long next(long n) {
-	    if (n % 2 == 0)
+	    if (n % 2 == 0) {
 	        return n / 2;       // if n is even
-	    else
+	    
+	    }else {
 	        return 3 * n + 1;   // if n is odd
+	    }
+	    
+	}
+	
+	public static int quantidadeCiclo(long n) {
+	    if (n == 1)
+	        return 1;
+		long nextValue = 0;
+		if (n % 2 == 0) {
+	    	nextValue = n / 2;       // if n is even
+	    
+	    }else {
+	    	nextValue = 3 * n + 1;   // if n is odd
+	    }
+	    int length = 1 + quantidadeCiclo(nextValue);
+	 
+	    return length;
 	}
 
 }
