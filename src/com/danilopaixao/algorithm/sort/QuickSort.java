@@ -31,7 +31,7 @@ public class QuickSort {
 		
 	}
 	
-	private static void sort(Note[] notes, int beginAt, int endAt) {
+	public static void sort(Note[] notes, int beginAt, int endAt) {
 		int elements = endAt - beginAt;
 		if(elements > 1) {
 			int pivot = partition(notes, beginAt, endAt);

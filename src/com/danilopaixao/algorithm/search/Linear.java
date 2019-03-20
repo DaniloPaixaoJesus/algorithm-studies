@@ -12,7 +12,9 @@ import com.danilopaixao.algorithm.Note;
  * but the average case can be affected if the search probabilities for each element vary. 
  * Linear search is rarely practical because other search algorithms and schemes, such as the binary search algorithm and hash tables, 
  * allow significantly faster searching for all but short lists.[2] 
-
+ * 
+ * Time complexity: Linear O(N)
+ *  
  * @author user
  *
  */
