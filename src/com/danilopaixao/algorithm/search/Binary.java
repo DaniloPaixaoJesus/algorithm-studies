@@ -1,7 +1,7 @@
 package com.danilopaixao.algorithm.search;
 
-import com.danilopaixao.algorithm.Note;
 import com.danilopaixao.algorithm.sort.QuickSort;
+import com.danilopaixao.vo.Note;
 
 /**
  * Binary search works on sorted arrays. 

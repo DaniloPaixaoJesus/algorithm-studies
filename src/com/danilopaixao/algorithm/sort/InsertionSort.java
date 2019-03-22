@@ -1,6 +1,6 @@
 package com.danilopaixao.algorithm.sort;
 
-import com.danilopaixao.algorithm.Product;
+import com.danilopaixao.vo.Product;
 
 /**
  * Insertion sort iterates, consuming one input element each repetition, 

@@ -2,6 +2,12 @@ package com.danilopaixao.algorithm.marathon;
 
 import java.util.Scanner;
 
+
+/**
+ * 
+ * @author user
+ *
+ */
 public class Palindrome {
 	
 	public static void teste(String[] args) {

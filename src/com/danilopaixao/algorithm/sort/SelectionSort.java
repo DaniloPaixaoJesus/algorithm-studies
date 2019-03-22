@@ -1,6 +1,6 @@
 package com.danilopaixao.algorithm.sort;
 
-import com.danilopaixao.algorithm.Product;
+import com.danilopaixao.vo.Product;
 
 /**
  * In computer science, selection sort is a sorting algorithm, specifically an in-place comparison sort. 

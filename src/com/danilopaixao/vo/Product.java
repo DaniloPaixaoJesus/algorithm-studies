@@ -1,4 +1,4 @@
-package com.danilopaixao.algorithm;
+package com.danilopaixao.vo;
 
 import java.math.BigDecimal;
 

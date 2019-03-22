@@ -1,6 +1,6 @@
 package com.danilopaixao.algorithm.sort;
 
-import com.danilopaixao.algorithm.Note;
+import com.danilopaixao.vo.Note;
 
 /**
  * 
