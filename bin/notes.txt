@@ -14,8 +14,26 @@ N is a number of Operation.
  	Exponential: 2^N
  
  Big O notation (Notação assintótica): O(1), O(N), O(2N), O(log(2N)), O(Nˆ2), O(2^N)
- 	
-Sort algorithm:
+ 
+ 
+Orderly studies:
 
- * Selection Sort: quadratic
- * Insertion Sort: quadratic
+* Selection Sort
+* Insertion Sort
+* Merge Sort
+* Quick Sort
+ 
+
+* Linear
+* Binary
+
+* Factorial
+* FibonacciSequence
+* Palindrome
+* QuantidadeNota
+* The3NPlus1Problem
+
+* AngleOfClockHands
+* MinesweeperProblem
+
+* BinaryGap
