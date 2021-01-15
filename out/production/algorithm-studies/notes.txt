@@ -1,0 +1,39 @@
+
+
+Algorithmic complexities are classified according to the type of function appearing in the big O notation. 
+For example, an algorithm with time complexity O(N) is a linear time algorithm .
+N is a number of Operation.
+ 
+ Types:
+    Constant: 1, 10
+    Logarithmic: Log(N) Log(2N) 
+ 	Linear: N, 2N, 3N
+ 	Variaty bet linear and quadratic: N*log(N), N*log(N)
+ 	Quadratic: Nˆ2, 2Nˆ2
+ 	Cubic: Nˆ3, 2Nˆ3
+ 	Exponential: 2^N
+ 
+ Big O notation (Notação assintótica): O(1), O(N), O(2N), O(log(2N)), O(Nˆ2), O(2^N)
+ 
+ 
+Orderly studies:
+
+* Selection Sort
+* Insertion Sort
+* Merge Sort
+* Quick Sort
+ 
+
+* Linear
+* Binary
+
+* Factorial
+* FibonacciSequence
+* Palindrome
+* QuantidadeNota
+* The3NPlus1Problem
+
+* AngleOfClockHands
+* MinesweeperProblem
+
+* BinaryGap
