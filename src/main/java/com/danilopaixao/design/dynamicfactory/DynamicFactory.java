@@ -14,15 +14,15 @@ public class DynamicFactory {
         props = new Properties();
         props.load(new FileInputStream(applicationPropertiesFile));
     }
-    public <E> E create(Class<E> interceCreated) {
-        String className = props.getProperty(interceCreated.getName());
+    public <E> E createObject(Class<E> interfaceType) {
+        String className = props.getProperty(interfaceType.getName());
         if(className == null) {
             throw new IllegalArgumentException(
                     "Interface not created");
         }
         try {
             Class clazz = Class.forName(className);
-            if (interceCreated.isAssignableFrom(clazz)) {
+            if (interfaceType.isAssignableFrom(clazz)) {
                 return (E) clazz.newInstance();
             } else {
                 throw new IllegalArgumentException(
